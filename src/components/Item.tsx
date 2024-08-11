@@ -24,7 +24,7 @@ export const Item: React.FC<ItemProps> = ({ id, title, onClick }) => {
       style={style}
       {...attributes}
       {...listeners}
-      className="task bg-slate-900 py-2 px-4 rounded-md text-white"
+      className="task bg-slate-500 py-2 px-4 rounded-md text-white"
       onClick={onClick}
     >
       {title}

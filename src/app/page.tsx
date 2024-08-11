@@ -36,6 +36,8 @@ export default function Home() {
     { id: "2", title: "I" },
     { id: "5", title: "love" },
     { id: "1", title: "you" },
+    { id: "7", title: "the" },
+    { id: "3", title: "most" },
   ]);
 
   const sensors = useSensors(
@@ -106,7 +108,7 @@ export default function Home() {
     setTasks([]);
   };
   return (
-    <main className="flex min-h-screen flex-col items-center gap-10 p-24">
+    <main className="flex min-h-screen flex-col items-center gap-5 p-24">
       <header className="w-full flex flex-col gap-4">
         <h1 className="text-5xl text-center">Word Wiggle</h1>
         <p className="text-lg text-center">
@@ -129,13 +131,13 @@ export default function Home() {
           onClick={() =>
             alert(checkOrder() ? "Correct Order" : "Incorrect Order")
           }
-          className="mt-4 p-2 bg-slate-700 hover:bg-blue-400 text-white rounded"
+          className="px-4 py-2 bg-slate-700 hover:bg-green-800 text-white rounded"
         >
           Check Order
         </button>
         <button
           onClick={resetTasks}
-          className="mt-4 p-2 bg-slate-700 hover:bg-red-600 text-white rounded"
+          className="px-4 py-2 bg-slate-700 hover:bg-yellow-800 text-white rounded"
         >
           Reset
         </button>

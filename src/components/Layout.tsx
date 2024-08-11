@@ -18,22 +18,8 @@ export const Layout: React.FC<LayoutProps> = ({
   onTaskClick,
 }) => {
   return (
-    <div className=" flex flex-col  w-full max-w-[600px]">
-      <div className=" flex flex-col gap-4 w-full h-[120px] p-4">
-        <h2>Available Tasks</h2>
-        <article className="flex gap-4">
-          {availableTasks.map((task) => (
-            <div
-              key={task.id}
-              onClick={() => onTaskClick(task, false)}
-              className="task-choice border-slate-900 border-2 py-2 px-4 rounded-md cursor-pointer"
-            >
-              {task.title}
-            </div>
-          ))}
-        </article>
-      </div>
-      <div className=" flex flex-col gap-4 w-full h-[120px] p-4">
+    <div className=" flex flex-col gap-4 w-full max-w-[600px]">
+      <div className=" flex flex-col gap-4 w-full h-[120px] p-4 bg-blue-600 rounded">
         <h2>Selected Tasks</h2>
         <article className="flex gap-4">
           <SortableContext
@@ -50,6 +36,20 @@ export const Layout: React.FC<LayoutProps> = ({
               />
             ))}
           </SortableContext>
+        </article>
+      </div>
+      <div className=" flex flex-col gap-4 w-full h-[120px] p-4 bg-slate-500 rounded">
+        <h2>Available Tasks</h2>
+        <article className="flex gap-4">
+          {availableTasks.map((task) => (
+            <div
+              key={task.id}
+              onClick={() => onTaskClick(task, false)}
+              className="task-choice bg-slate-600 py-2 px-4 rounded-md cursor-pointer"
+            >
+              {task.title}
+            </div>
+          ))}
         </article>
       </div>
     </div>
