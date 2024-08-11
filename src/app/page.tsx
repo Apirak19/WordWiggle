@@ -129,12 +129,13 @@ export default function Home() {
           onClick={() =>
             alert(checkOrder() ? "Correct Order" : "Incorrect Order")
           }
+          className="mt-4 p-2 bg-slate-700 hover:bg-blue-400 text-white rounded"
         >
           Check Order
         </button>
         <button
           onClick={resetTasks}
-          className="mt-4 p-2 bg-blue-500 text-white rounded"
+          className="mt-4 p-2 bg-slate-700 hover:bg-red-600 text-white rounded"
         >
           Reset
         </button>

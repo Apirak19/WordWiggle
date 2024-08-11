@@ -17,10 +17,9 @@ export const Layout: React.FC<LayoutProps> = ({
   availableTasks,
   onTaskClick,
 }) => {
-  
   return (
-    <div className="column flex flex-col gap-4">
-      <div className="column">
+    <div className=" flex flex-col  w-full max-w-[600px]">
+      <div className=" flex flex-col gap-4 w-full h-[120px] p-4">
         <h2>Available Tasks</h2>
         <article className="flex gap-4">
           {availableTasks.map((task) => (
@@ -34,7 +33,7 @@ export const Layout: React.FC<LayoutProps> = ({
           ))}
         </article>
       </div>
-      <div className="column">
+      <div className=" flex flex-col gap-4 w-full h-[120px] p-4">
         <h2>Selected Tasks</h2>
         <article className="flex gap-4">
           <SortableContext
