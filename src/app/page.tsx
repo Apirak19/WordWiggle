@@ -41,7 +41,11 @@ export default function Home() {
   ]);
 
   const sensors = useSensors(
-    useSensor(PointerSensor),
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 5,
+      },
+    }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     })
@@ -131,7 +135,10 @@ export default function Home() {
           onClick={() =>
             alert(checkOrder() ? "Correct Order" : "Incorrect Order")
           }
-          className="px-4 py-2 bg-slate-700 hover:bg-green-800 text-white rounded"
+          className={`px-4 py-2 bg-slate-600 ${
+            tasks.length === 0 ? "" : "hover:bg-green-800"
+          }}  text-white rounded`}
+          disabled={tasks.length === 0}
         >
           Check Order
         </button>
